@@ -1,5 +1,5 @@
 {
-    "application": "eks-dinghytest",
+    "application": "eks-dinghytest2",
     "pipelines": [
         {
             "application": "eks-dinghytest2",
