@@ -8,7 +8,8 @@
             "limitConcurrent": true,
             "stages": [
                 
-                    {{ module "dinghy-modules/wait.stage.module" }}
+                    {{ module "dinghy-modules/wait.stage.module" }},
+                    {{ module "dinghy-modules/stage.manualJudgment.module" }}
                       
             ],
             "triggers": []
