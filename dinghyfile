@@ -8,17 +8,9 @@
             "limitConcurrent": true,
             "stages": [
                 
-                    // {{ module "dinghy-modules/wait.stage.module" }},
-                    // {{ module "dinghy-modules/stage.manualJudgment.module" }}
-                        {{$stages := makeSlice "First Wait" "Secound Wait"}}
-                        {{range $stages}}
-                        {{
-                            module  "dinghy-modules/wait.stage.module"
-                        }},
-                        {{ end }},
-                        {{
-                            module "dinghy-modules/wait.stage.module"
-                        }}
+                    {{ module "dinghy-modules/wait.stage.module" }},
+                    {{ module "dinghy-modules/stage.manualJudgment.module" }}
+
             ],
             "triggers": []
         }
