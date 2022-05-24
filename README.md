@@ -1,1 +1,1 @@
-# dighny
+# dinghy
