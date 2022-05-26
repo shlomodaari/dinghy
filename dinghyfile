@@ -8,8 +8,11 @@
             "limitConcurrent": true,
             "stages": [
                 
-                    {{ module "dinghy-modules/wait.stage.module" }},
-                    {{ module "dinghy-modules/stage.manualJudgment.module" }}
+
+                    {{ if eq.RawData.pusher.name"shlomodaari"}}
+                        {{ module "dinghy-modules/wait.stage.module" }}
+                    {{else}}    
+                        {{ module "dinghy-modules/stage.manualJudgment.module" }}  
 
             ],
             "triggers": []
