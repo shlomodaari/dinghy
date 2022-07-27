@@ -6,15 +6,13 @@
             "name": "dinghy1",
             "keepWaitingPipelines": false,
             "limitConcurrent": true,
-            "stages": [
-                
-
-                    {{ if eq.RawData.pusher.name"shlomodaari"}}
-                        {{ module "dinghy-modules/wait.stage.module" }}
-                    {{else}}    
-                        {{ module "dinghy-modules/stage.manualJudgment.module" }}  
-
-            ],
+            "stages": [{
+                "name": "Wait",
+                "refId": "1",
+                "requisiteStageRefIds": [],
+                "type": "wait",
+                "waitTime": 10
+            }],
             "triggers": []
         }
     ]
