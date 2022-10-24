@@ -1,0 +1,18 @@
+{
+  "cloudProvider": "aws",
+  "cloudProviderType": "aws",
+  "cluster": {{ var "cluster_name" }},
+  "credentials": "{{ var "credential_name" }}",
+  "isNew": true,
+  "moniker": {
+    "app": "{{ var "app_name" }}",
+    "cluster": {{ var "cluster_name" }},
+    "sequence": null
+  },
+  "name": "{{ var "stage_name" }}",
+  "regions": [
+    {{ var "stage_regions" ?: [] }}
+  ],
+  "target": "oldest_asg_dynamic",
+  "type": "destroyServerGroup"
+}
