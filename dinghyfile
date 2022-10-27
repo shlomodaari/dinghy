@@ -1,21 +1,21 @@
 {
-  "applications": [
-    "shlomotest2-dinghy"
-  ],
-  "classifier": {
-    "groupWeights": {}
-  },
-  "configVersion": "1",
-  "createdTimestamp": 1650393699983,
-  "createdTimestampIso": "2022-04-19T18:41:39.983Z",
-  "description": "",
-  "judge": {
-    "judgeConfigurations": {},
-    "name": "NetflixACAJudge-v1.0"
-  },
-  "metrics": [],
-  "name": "shlomo-test-dinghy",
-  "templates": {},
-  "updatedTimestamp": 1650393699983,
-  "updatedTimestampIso": "2022-04-19T18:41:39.983Z"
+  "application": "dinghy-test-shlomo",
+  "pipelines": [
+    {
+      "application": "dinghy-test-shlomo-1",
+      "keepWaitingPipelines": false,
+      "limitConcurrent": true,
+      "name": "Made By Armory dinghy",
+      "stages": [
+        {
+          "name": "Wait",
+          "refId": "1",
+          "requisiteStageRefIds": [],
+          "type": "wait",
+          "waitTime": 10
+        }
+      ],
+      "triggers": []
+    }
+  ]
 }
