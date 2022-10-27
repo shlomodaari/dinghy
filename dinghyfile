@@ -1,5 +1,5 @@
 {
-  "application": "dinghy-test-shlomo",
+  "application": "dinghy",
   "pipelines": [
     {
       "application": "dinghy-test-shlomo-1",
