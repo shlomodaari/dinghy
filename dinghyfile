@@ -2,9 +2,9 @@
   "application": "dinghy",
   "pipelines": [
   "globals": {
-    "app_name": "continuous-deployment-util",
-    "repo_name": "spinnaker-cd-util",
-    "team_name": "ops"
+    "app_name": "dinghy",
+    "repo_name": "dinghy",
+    "team_name": "dinghy"
   },
   "pipelines": [
     {
