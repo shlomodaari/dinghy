@@ -1,10 +1,11 @@
 {
-  "application": "continuous-deployment-util",
+  "application": "dinghy",
   "globals": {
     "app_name": "continuous-deployment-util",
     "repo_name": "spinnaker-cd-util",
     "team_name": "ops"
   },
+  "application": dinghy
   "pipelines": [
     {
       "appConfig": {},
