@@ -1,27 +1,4 @@
 {
-  "application": "dinghy",
-  "pipelines": [
-    {
-      "application": "dinghy",
-      "keepWaitingPipelines": false,
-      "limitConcurrent": true,
-      "name": "wait",
-      "stages": [
-        {
-          "name": "Wait",
-          "refId": "1",
-          "requisiteStageRefIds": [],
-          "type": "wait",
-          "waitTime": 20
-        }
-      ],
-      "triggers": []
-    }
-  ]
-}
-
-
-{
   "application": "continuous-deployment-util",
   "globals": {
     "app_name": "continuous-deployment-util",
