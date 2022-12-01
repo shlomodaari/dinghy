@@ -19,3 +19,147 @@
     }
   ]
 }
+
+
+{
+  "application": "continuous-deployment-util",
+  "globals": {
+    "app_name": "continuous-deployment-util",
+    "repo_name": "spinnaker-cd-util",
+    "team_name": "ops"
+  },
+  "pipelines": [
+    {
+      "appConfig": {},
+      "keepWaitingPipelines": false,
+      "limitConcurrent": true,
+      "parameterConfig": [
+        {
+          "default": "",
+          "description": "Service name to update continuous flag",
+          "hasOptions": true,
+          "label": "Service name to update continuous flag",
+          "name": "SERVICE_NAME",
+          "options": [
+            {
+              "value": "apple-media-feed-validator"
+            },
+            {
+              "value": "categories"
+            },
+            {
+              "value": "config-delta"
+            },
+            {
+              "value": "custom-lists-admin"
+            },
+            {
+              "value": "cxweb"
+            },
+            {
+              "value": "cxweb-reverse-proxy"
+            },
+            {
+              "value": "dam"
+            },
+            {
+              "value": "derived-benefits-calculator"
+            },
+            {
+              "value": "etp-admin-api"
+            },
+            {
+              "value": "etp-client-creds-mgmt-api"
+            },
+            {
+              "value": "etp-index"
+            },
+            {
+              "value": "feed-management"
+            },
+            {
+              "value": "release-board-api"
+            },
+            {
+              "value": "release-board-client"
+            },
+            {
+              "value": "release-board-da"
+            },
+            {
+              "value": "subs"
+            },
+            {
+              "value": "test-container"
+            },
+            {
+              "value": "test-lambda"
+            },
+            {
+              "value": "video-asset-service"
+            },
+            {
+              "value": "watchhistory-admin"
+            },
+            {
+              "value": "watchlist-admin"
+            },
+            {
+              "value": "web-proxy"
+            }
+          ],
+          "pinned": true,
+          "required": true
+        },
+        {
+          "default": "false",
+          "description": "Whether continuous deployment should be true or false",
+          "hasOptions": true,
+          "label": "Whether continuous deployment should be true or false",
+          "name": "SET_CONTINUOUS_DEPLOYMENT_TO",
+          "options": [
+            {
+              "value": "true"
+            },
+            {
+              "value": "false"
+            }
+          ],
+          "pinned": true,
+          "required": true
+        }
+      ],
+      "spelEvaluator": "v4",
+      "stages": [
+        {
+          "alias": "preconfiguredJob",
+          "name": "Update Continuous Deployment",
+          "parameters": {
+            "SERVICE_NAME": "${ parameters['SERVICE_NAME'] }",
+            "SET_CONTINUOUS_DEPLOYMENT_TO": "${ parameters['SET_CONTINUOUS_DEPLOYMENT_TO'] }"
+          },
+          "refId": "1",
+          "requisiteStageRefIds": [],
+          "type": "updateContinuousDeployment"
+        }
+      ],
+      "triggers": []
+    },
+    {
+      "keepWaitingPipelines": false,
+      "limitConcurrent": true,
+      "spelEvaluator": "v4",
+      "stages": [
+        {
+          "alias": "preconfiguredJob",
+          "name": "View Continuous Deployment",
+          "parameters": {},
+          "refId": "viewContinuousDeployment",
+          "requisiteStageRefIds": [],
+          "type": "viewContinuousDeployment"
+        }
+      ],
+      "triggers": []
+    }
+  ]
+}
