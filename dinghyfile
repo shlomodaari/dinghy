@@ -1,14 +1,12 @@
 {
   "application": "dinghy",
-  "globals": {
-    "app_name": "continuous-deployment-util",
-    "repo_name": "spinnaker-cd-util",
-    "team_name": "ops"
-  },
-  "application": dinghy
   "pipelines": [
     {
-      "appConfig": {},
+      "application": "dinghy",
+      "keepWaitingPipelines": false,
+      "limitConcurrent": true,
+      "name": "wait",
+            "appConfig": {},
       "keepWaitingPipelines": false,
       "limitConcurrent": true,
       "parameterConfig": [
@@ -89,55 +87,18 @@
           "pinned": true,
           "required": true
         },
-        {
-          "default": "false",
-          "description": "Whether continuous deployment should be true or false",
-          "hasOptions": true,
-          "label": "Whether continuous deployment should be true or false",
-          "name": "SET_CONTINUOUS_DEPLOYMENT_TO",
-          "options": [
-            {
-              "value": "true"
-            },
-            {
-              "value": "false"
-            }
-          ],
-          "pinned": true,
-          "required": true
-        }
-      ],
-      "spelEvaluator": "v4",
       "stages": [
         {
-          "alias": "preconfiguredJob",
-          "name": "Update Continuous Deployment",
-          "parameters": {
-            "SERVICE_NAME": "${ parameters['SERVICE_NAME'] }",
-            "SET_CONTINUOUS_DEPLOYMENT_TO": "${ parameters['SET_CONTINUOUS_DEPLOYMENT_TO'] }"
-          },
+          "name": "Wait",
           "refId": "1",
           "requisiteStageRefIds": [],
-          "type": "updateContinuousDeployment"
-        }
-      ],
-      "triggers": []
-    },
-    {
-      "keepWaitingPipelines": false,
-      "limitConcurrent": true,
-      "spelEvaluator": "v4",
-      "stages": [
-        {
-          "alias": "preconfiguredJob",
-          "name": "View Continuous Deployment",
-          "parameters": {},
-          "refId": "viewContinuousDeployment",
-          "requisiteStageRefIds": [],
-          "type": "viewContinuousDeployment"
+          "type": "wait",
+          "waitTime": 20
         }
       ],
       "triggers": []
     }
   ]
 }
+
+
