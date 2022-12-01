@@ -5,7 +5,7 @@
       "application": "dinghy",
       "keepWaitingPipelines": false,
       "limitConcurrent": true,
-      "name": "Made By Armory dinghy",
+      "name": "wait",
       "stages": [
         {
           "name": "Wait",
