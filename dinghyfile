@@ -2,7 +2,7 @@
   "application": "dinghy",
   "pipelines": [
     {
-      "application": "dinghy-test-shlomo-1",
+      "application": "dinghy",
       "keepWaitingPipelines": false,
       "limitConcurrent": true,
       "name": "Made By Armory dinghy",
