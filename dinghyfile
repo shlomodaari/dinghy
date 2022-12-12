@@ -1,21 +1,18 @@
 {
-  "application": "dinghy",
-  "pipelines": [
-    {
-      "application": "dinghy",
-      "keepWaitingPipelines": false,
-      "limitConcurrent": true,
-      "name": "wait",
-      "stages": [
+    "application": "dinghy2",
+    "pipelines": [
         {
-          "name": "Wait",
-          "refId": "1",
-          "requisiteStageRefIds": [],
-          "type": "wait",
-          "waitTime": 30
+            "application": "dinghy2",
+            "name": "DinghyValidation-Tests",
+            "keepWaitingPipelines": false,
+            "limitConcurrent": true,
+            "stages": [
+                
+                    {{ module "dinghy-modules/wait.stage.module" }},
+                    {{ module "dinghy-modules/wait.stage.module2" }}
+                      
+            ],
+            "triggers": []
         }
-      ],
-      "triggers": []
-    }
-  ]
+    ]
 }
