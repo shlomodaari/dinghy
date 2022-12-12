@@ -3,12 +3,11 @@
     "pipelines": [
         {
             "application": "eks-dinghytest3",
-            "name": "DinghyValidation-Tests",
+            "name": "DinghyValidation-Tests-new",
             "keepWaitingPipelines": false,
             "limitConcurrent": true,
             "stages": [             
-                    {{ module "dinghy-modules/wait.stage.module" }},
-                    {{ module "dinghy-modules/wait.stage.module2" }}                  
+                    {{ module "dinghy-modules/wait.stage.module" }},              
             ],
             "triggers": []
         }
