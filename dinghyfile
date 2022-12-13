@@ -3,7 +3,7 @@
     "pipelines": [
         {
             "application": "eks-dinghytest3",
-            "name": "DinghyValidation-Tests-new",
+            "name": "DinghyValidation-Tests-new-1",
             "keepWaitingPipelines": false,
             "limitConcurrent": true,
             "stages": [             
