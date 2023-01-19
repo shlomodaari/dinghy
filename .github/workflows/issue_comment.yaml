@@ -9,9 +9,11 @@ jobs:
   comment-with-action:
     runs-on: ubuntu-latest
     steps:
-      - name: "dump github context" 
-        run: echo '${{ github.event }}' 
-        shell: bash
+      - name: Dump GitHub context
+        env:
+          GITHUB_CONTEXT: ${{ toJson(github.event) }} | jq 
+        run: |
+          echo "$GITHUB_CONTEXT"
       - name: Create comment
         uses: peter-evans/create-or-update-comment@v2
         with:
