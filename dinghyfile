@@ -1,8 +1,8 @@
 {
-    "application": "eks-dinghytest3",
+    "application": "dinghy2",
     "pipelines": [
         {
-            "application": "eks-dinghytest3",
+            "application": "dinghy2",
             "name": "DinghyValidation-Tests-new-2",
             "keepWaitingPipelines": false,
             "limitConcurrent": true,
