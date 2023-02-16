@@ -1,7 +1,16 @@
 {
-    "name": "Wait",
-    "refId": "1",
-    "requisiteStageRefIds": [],
-    "type": "wait",
-    "waitTime": 200
+  "baseAmi": "ami-0626e098c72b2d290",
+  "baseLabel": "release",
+  "baseOs": "ubuntu",
+  "cloudProviderType": "aws",
+  "extendedAttributes": {},
+  "name": "Bake",
+  "package": "hello",
+  "regions": [
+    "us-west-2"
+  ],
+  "storeType": "ebs",
+  "type": "bake",
+  "user": "shlomodaari",
+  "vmType": "hvm"
 }
